@@ -61,8 +61,8 @@ angular
       console.log("mouseclick", event);
       sessionEvents.mouseclick++;
     });
-
     ioHook.start();
+
     $scope.toggleCamera = async flag => {
       if (!enabled && flag === true) {
         if (!$("#camdemo").length) {
@@ -75,7 +75,7 @@ angular
         console.log(x);
         $("#camdemo").css("display", "none");
         console.log("Please enable the camera first to take the snapshot !");
-        await new Promise(resolve => setTimeout(() => resolve(), 500));
+        await new Promise(resolve => setTimeout(() => resolve(), 1000));
       } else if (flag === false) {
         enabled = false;
         WebCamera.reset();
@@ -114,7 +114,7 @@ angular
           WebCamera.snap(async function(data_uri) {
             var imageBuffer = processBase64Image(data_uri);
             fs.writeFileSync(wcPath, imageBuffer.data);
-            await $scope.toggleCamera(false);
+            // await $scope.toggleCamera(false);
             resolve(wcPath);
           });
         });
