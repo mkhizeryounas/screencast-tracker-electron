@@ -1,12 +1,7 @@
 "use strict";
 
 const fs = require("fs");
-const http = require("request");
 const os = require("os");
-const extract = require("extract-zip");
-const { exec } = require("child_process");
-const { dialog } = require("electron").remote;
-const { closeApp } = require("../../../src/common");
 const { desktopCapturer } = require("electron");
 const WebCamera = require("webcamjs");
 const ioHook = require("iohook");
@@ -82,6 +77,7 @@ angular
       }
       return enabled;
     };
+
     $scope.screenshot = async () => {
       await $scope.toggleCamera(true);
       let sources = await desktopCapturer.getSources({
