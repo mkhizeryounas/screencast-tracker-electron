@@ -83,9 +83,6 @@ angular
       return enabled;
     };
     $scope.screenshot = async () => {
-      // await new Promise(resolve => {
-      //   setTimeout(async () => resolve(), 1000);
-      // });
       await $scope.toggleCamera(true);
       let sources = await desktopCapturer.getSources({
         types: ["window", "screen"],
