@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopdev</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+      window.$ = window.jQuery = require("jquery");
+      var orig = console.log;
+
+      // const log = require("electron-log");
+      // console.log = function() {
+      //   log.info(...arguments);
+      // };
+      const { getApp, getLink } = require("electron").remote.require(
+        "./main.js"
+      );
+      // const schemaLogic = require("./src/schemaLogic.js");
+    </script>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/popper.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="mainCtrl">
+    <!-- <h1>Electronjs & AngularJS Boilerplate!</h1> -->
+    <!-- <ul>
+      <li>
+        <a ui-sref="home">Home</a>
+      </li>
+      <li>
+        <a ui-sref="upload">Upload</a>
+      </li>
+    </ul> -->
+    <!-- <hr /> -->
+
+    <ui-view></ui-view>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <div class="footer">
+      <a ui-sref="home">
+        <img src="./imgs/logo.png" style="width:120px" alt="" srcset="" />
+      </a>
+    </div>
+    <script>
+      require("angular");
+      require("./app/app.js");
+
+      /****** start libraries ******/
+      require("@uirouter/angularjs");
+      /****** end libraries ******/
+      /****** start controllers ******/
+      require("./app/controllers/homeController/home.js");
+      require("./app/controllers/blankController/blank.js");
+      /****** end controllers ******/
+
+      require("./renderer.js");
+    </script>
+  </body>
+</html>

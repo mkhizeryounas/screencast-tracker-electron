@@ -1,0 +1,79 @@
+{
+  "name": "sdcast",
+  "version": "1.0.9",
+  "description": "Shopdesk tracker desktop client",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=prod && electron .",
+    "pack": "build -m",
+    "pack-win": "build -w"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Shopdesk",
+  "license": "CC0-1.0",
+  "build": {
+    "appId": "co.shopdesk.sdcast",
+    "productName": "Shopdesk Screen Tracker",
+    "protocols": {
+      "name": "sdcast-protocol",
+      "schemes": [
+        "sdcast"
+      ]
+    },
+    "iohook": {
+      "targets": [
+        "node-59",
+        "electron-47",
+        "electron-54",
+        "electron-57"
+      ],
+      "platforms": [
+        "win32",
+        "darwin"
+      ],
+      "arches": [
+        "x64",
+        "ia32"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^5.0.11",
+    "electron-builder": "^20.44.4"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.17",
+    "angular": "^1.7.0",
+    "electron-log": "^3.0.7",
+    "express": "^4.15.2",
+    "extract-zip": "^1.6.7",
+    "iohook": "git+https://github.com/mkhizeryounas/iohook-electron.git",
+    "jquery": "^3.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.15.0",
+    "ncp": "^2.0.0",
+    "request": "^2.88.0",
+    "request-progress": "^3.0.0",
+    "request-promise": "^4.2.4",
+    "socket.io": "^2.2.0",
+    "webcamjs": "^1.0.25",
+    "winreg": "^1.2.4"
+  }
+}
