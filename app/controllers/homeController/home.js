@@ -107,7 +107,6 @@ angular
           WebCamera.snap(async function(data_uri) {
             var imageBuffer = processBase64Image(data_uri);
             fs.writeFileSync(wcPath, imageBuffer.data);
-            // await $scope.toggleCamera(false);
             resolve(wcPath);
           });
         });
