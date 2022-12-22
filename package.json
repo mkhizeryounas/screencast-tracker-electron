@@ -50,7 +50,7 @@
     "extract-zip": "^1.6.7",
     "iohook": "git+https://github.com/mkhizeryounas/iohook-electron.git",
     "jquery": "^3.4.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mysql": "^2.15.0",
     "ncp": "^2.0.0",
     "request": "^2.88.0",
